@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkEdu-Core-Service.Api", "src\ThinkEdu-Core-Service.Api\ThinkEdu-Core-Service.Api.csproj", "{383670E2-08C8-2742-EE74-F8C81AC58693}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkEdu-Core-Service.Application", "src\ThinkEdu-Core-Service.Application\ThinkEdu-Core-Service.Application.csproj", "{148D76E3-8D07-E4EF-D63F-276811B1A31A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkEdu-Core-Service.Domain", "src\ThinkEdu-Core-Service.Domain\ThinkEdu-Core-Service.Domain.csproj", "{B5A206C5-4F0F-FD27-CAF4-448FEB319475}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinkEdu-Core-Service.Infrastructure", "src\ThinkEdu-Core-Service.Infrastructure\ThinkEdu-Core-Service.Infrastructure.csproj", "{5593B0F1-48BB-1B9A-5327-A20E57EF0454}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{383670E2-08C8-2742-EE74-F8C81AC58693}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{383670E2-08C8-2742-EE74-F8C81AC58693}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{383670E2-08C8-2742-EE74-F8C81AC58693}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{383670E2-08C8-2742-EE74-F8C81AC58693}.Release|Any CPU.Build.0 = Release|Any CPU
+		{148D76E3-8D07-E4EF-D63F-276811B1A31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{148D76E3-8D07-E4EF-D63F-276811B1A31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{148D76E3-8D07-E4EF-D63F-276811B1A31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{148D76E3-8D07-E4EF-D63F-276811B1A31A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5A206C5-4F0F-FD27-CAF4-448FEB319475}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A206C5-4F0F-FD27-CAF4-448FEB319475}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A206C5-4F0F-FD27-CAF4-448FEB319475}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A206C5-4F0F-FD27-CAF4-448FEB319475}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5593B0F1-48BB-1B9A-5327-A20E57EF0454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5593B0F1-48BB-1B9A-5327-A20E57EF0454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5593B0F1-48BB-1B9A-5327-A20E57EF0454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5593B0F1-48BB-1B9A-5327-A20E57EF0454}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{383670E2-08C8-2742-EE74-F8C81AC58693} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{148D76E3-8D07-E4EF-D63F-276811B1A31A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{B5A206C5-4F0F-FD27-CAF4-448FEB319475} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{5593B0F1-48BB-1B9A-5327-A20E57EF0454} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5CF5AD3-2C61-4F21-89C3-B73602DF9C49}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+# Thư mục và file của Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output
+bin/
+obj/
+Logs
+
+# IDE khác
+.vscode/
+.idea/
+
+appsettings.Development.json
