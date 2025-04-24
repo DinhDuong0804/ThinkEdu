@@ -70,7 +70,8 @@ namespace ThinkEdu_Core_Service.Application.Models
 
         public bool GetFiledAll()
         {
-            if (_all == true) return true;
+            if (_all == true)
+                return true;
             return _rows is < 0;
         }
     }

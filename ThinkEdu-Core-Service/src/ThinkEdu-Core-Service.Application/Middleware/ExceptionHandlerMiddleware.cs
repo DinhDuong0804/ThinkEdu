@@ -92,5 +92,4 @@ namespace ThinkEdu_Core_Service.Application.Middleware
             return context.Response.WriteAsync(result);
         }
     }
-
 }

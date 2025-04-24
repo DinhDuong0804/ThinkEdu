@@ -6,6 +6,5 @@ public enum EActionModule
     Update,
     List,
     Detail,
-    Report,
     Delete
 }

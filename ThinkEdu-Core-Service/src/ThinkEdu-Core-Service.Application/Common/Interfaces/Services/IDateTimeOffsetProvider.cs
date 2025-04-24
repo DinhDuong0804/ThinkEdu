@@ -1,4 +1,4 @@
-﻿namespace ThinkEdu_Core_Service.Application.Common.Interfaces
+﻿namespace ThinkEdu_Core_Service.Application.Common.Interfaces.Services
 {
     public interface IDateTimeOffsetProvider
     {

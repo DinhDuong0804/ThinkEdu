@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Localization;
-using Microsoft.OpenApi.Models;
 using Serilog;
 using System.Globalization;
 using ThinkEdu_Core_Service.Application;
@@ -18,40 +17,14 @@ builder.Services.AddCors(options => options.AddPolicy(name: "AllowSpecificOrigin
        {
            policy.WithOrigins("*")
                .AllowAnyHeader()
-               .AllowAnyMethod()
-               ;
+               .AllowAnyMethod();
+               
        }));
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddLocalization();
-builder.Services.AddSwaggerGen(option =>
-{
-    option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
-    option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-    {
-        In = ParameterLocation.Header,
-        Description = "Please enter a valid token",
-        Name = "Authorization",
-        Type = SecuritySchemeType.Http,
-        BearerFormat = "JWT",
-        Scheme = "Bearer"
-    });
-    option.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type=ReferenceType.SecurityScheme,
-                    Id="Bearer"
-                }
-            },
-            new string[]{}
-        }
-    });
-});
+builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 
@@ -76,7 +49,6 @@ app.UseRequestLocalization(new RequestLocalizationOptions
 
 app.UseCors("AllowSpecificOrigins");
 app.UseHttpsRedirection();
-app.UseAuthorization();
 app.AddApplicationBuilders();
 app.MigrateDatabase();
 app.MapControllers();
