@@ -19,5 +19,7 @@ namespace ThinkEdu_Core_Service.Domain.Entities
         public TrungTam? TrungTam { get; set; }
 
         public long TenantId { get; set; }
+
+        public string? UpdatedBy { get; set; }
     }
 }

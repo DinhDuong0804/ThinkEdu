@@ -4,7 +4,6 @@ namespace ThinkEdu_Core_Service.Domain.Entities
 {
     public class ToChuc : BaseAuditableEntity<long>
     {
-
         public string MaToChuc { get; set; } = null!;
 
         public string? TenToChuc { get; set; }

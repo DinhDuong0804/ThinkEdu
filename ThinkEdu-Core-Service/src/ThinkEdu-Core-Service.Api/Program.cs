@@ -12,15 +12,6 @@ Log.Logger = new LoggerConfiguration()
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddAppConfigurations();
-builder.Services.AddCors(options => options.AddPolicy(name: "AllowSpecificOrigins",
-       policy =>
-       {
-           policy.WithOrigins("*")
-               .AllowAnyHeader()
-               .AllowAnyMethod();
-               
-       }));
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddLocalization();
@@ -35,6 +26,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 var supportedCultures = new List<CultureInfo>
     {
         new CultureInfo("vi-VN"),
@@ -47,9 +39,10 @@ app.UseRequestLocalization(new RequestLocalizationOptions
     SupportedUICultures = supportedCultures
 });
 
-app.UseCors("AllowSpecificOrigins");
+app.UseCors("AllowAll");
 app.UseHttpsRedirection();
 app.AddApplicationBuilders();
 app.MigrateDatabase();
 app.MapControllers();
+
 app.Run();

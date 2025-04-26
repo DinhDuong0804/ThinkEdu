@@ -12,16 +12,16 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Controllers\"/>
-        <Folder Include="Logs\"/>
+        <Folder Include="Controllers\" />
+        <Folder Include="Logs\" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\ThinkEdu-Core-Service.Infrastructure\ThinkEdu-Core-Service.Infrastructure.csproj"/>
+        <ProjectReference Include="..\ThinkEdu-Core-Service.Infrastructure\ThinkEdu-Core-Service.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

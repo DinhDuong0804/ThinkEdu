@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using ThinkEdu_Core_Service.Domain.Common;
+using ThinkEdu_Core_Service.Domain.Enums;
 
-namespace ThinkEdu_Core_Service.Domain.Enums;
+namespace ThinkEdu_Core_Service.Domain.Common;
 
 public abstract class BaseStatusEntity<T> : BaseEntity<T>
 {

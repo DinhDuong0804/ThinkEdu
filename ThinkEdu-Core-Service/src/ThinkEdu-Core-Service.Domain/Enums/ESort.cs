@@ -7,6 +7,6 @@ namespace ThinkEdu_Core_Service.Domain.Enums
         [EnumMember(Value = "ASC")]
         ASC,
         [EnumMember(Value = "DESC")]
-        DESC,
+        DESC
     }
 }

@@ -19,13 +19,11 @@ namespace ThinkEdu_Core_Service.Infrastructure.Configurations
             builder.Property(t => t.TrungTamId).HasColumnName("trung_tam_id").IsRequired().HasColumnType("bigint");
             builder.Property(t => t.TenantId).HasColumnName("tenant_id").IsRequired().HasColumnType("bigint");
             builder.Property(x => x.Status).HasColumnName("status").IsRequired().HasColumnType("varchar(50)").HasMaxLength(50);
-            builder.Property(x => x.CreatedAt).HasColumnName("created_at").IsRequired();
+            builder.Property(x => x.CreatedAt).HasColumnName("created_at").IsRequired(false);
             builder.Property(x => x.UpdatedAt).HasColumnName("updated_at").IsRequired(false);
             builder.Property(x => x.CreatedBy).HasColumnName("created_by").IsRequired(false).HasColumnType("varchar(255)").HasMaxLength(255);
             builder.Property(x => x.UpdatedBy).HasColumnName("updated_by").IsRequired(false).HasColumnType("varchar(255)").HasMaxLength(255);
-            builder.HasOne(x => x.TrungTam).WithMany(x => x.CoSo).HasForeignKey(x => x.TrungTamId).OnDelete(DeleteBehavior.Cascade);
-            builder.Ignore(x => x.DeletedBy);
-            builder.Ignore(x => x.DeletedAt);                
+            builder.HasOne(x => x.TrungTam).WithMany(x => x.CoSo).HasForeignKey(x => x.TrungTamId).OnDelete(DeleteBehavior.Cascade);           
         }
     }
 }

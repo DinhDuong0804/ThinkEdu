@@ -15,11 +15,9 @@ namespace ThinkEdu_Core_Service.Infrastructure.Configurations
             builder.Property(t => t.Email).HasColumnName("email").IsRequired(false).HasColumnType("varchar(255)").HasMaxLength(255);
             builder.Property(x => x.SoDienThoai).HasColumnName("so_dien_thoai").IsRequired(false).HasColumnType("varchar(15)").HasMaxLength(15);
             builder.Property(x => x.Status).HasColumnName("status").IsRequired().HasColumnType("varchar(50)").HasMaxLength(50);
-            builder.Property(x => x.CreatedAt).HasColumnName("created_at").IsRequired();
+            builder.Property(x => x.CreatedAt).HasColumnName("created_at").IsRequired(false);
             builder.Property(x => x.UpdatedAt).HasColumnName("updated_at").IsRequired(false);
-            builder.Property(x => x.CreatedBy).HasColumnName("created_by").IsRequired(false).HasColumnType("varchar(255)").HasMaxLength(255);
-            builder.Ignore(x => x.UpdatedBy);
-            builder.Ignore(x => x.DeletedBy);                             
+            builder.Property(x => x.CreatedBy).HasColumnName("created_by").IsRequired(false).HasColumnType("varchar(255)").HasMaxLength(255);                       
         }
     }
 }

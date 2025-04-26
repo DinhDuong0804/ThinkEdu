@@ -1,13 +1,19 @@
-﻿using ThinkEdu_Core_Service.Domain.Enums;
+﻿using System.Net;
 
 namespace ThinkEdu_Core_Service.Domain.Common;
 
 public class BaseResponse<T>
 {
+    public bool Success { get; set; }
+    public HttpStatusCode ResultCode { get; set; }
+    public object? Message { get; set; }
+    public List<string>? ValidationErrors { get; set; }
+    public T? Data { get; set; }
+
     public BaseResponse()
     {
         Success = true;
-        ResultCode = EResultCode.GET;
+        ResultCode = HttpStatusCode.OK;
     }
 
     public BaseResponse(bool success)
@@ -19,7 +25,7 @@ public class BaseResponse<T>
     {
         Success = true;
         Message = message;
-        ResultCode = EResultCode.GET;
+        ResultCode = HttpStatusCode.OK;
     }
 
     public BaseResponse(string message, bool success)
@@ -28,7 +34,7 @@ public class BaseResponse<T>
         Message = message;
     }
 
-    public BaseResponse(string message, bool success, EResultCode resultCode)
+    public BaseResponse(string message, bool success, HttpStatusCode resultCode)
     {
         Success = success;
         Message = message;
@@ -39,11 +45,11 @@ public class BaseResponse<T>
     {
         Success = true;
         Message = message;
-        ResultCode = EResultCode.GET;
+        ResultCode = HttpStatusCode.OK;
         Data = data;
     }
 
-    public BaseResponse(T data, EResultCode resultCode, string? message = null)
+    public BaseResponse(T data, HttpStatusCode resultCode, string? message = null)
     {
         Success = true;
         Message = message;
@@ -52,9 +58,4 @@ public class BaseResponse<T>
         ValidationErrors = null;
     }
 
-    public bool Success { get; set; }
-    public EResultCode ResultCode { get; set; }
-    public object? Message { get; set; }
-    public List<string>? ValidationErrors { get; set; }
-    public T? Data { get; set; }
 }

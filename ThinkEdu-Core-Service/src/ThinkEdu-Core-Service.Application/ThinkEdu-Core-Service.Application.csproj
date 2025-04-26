@@ -56,4 +56,8 @@
         <ProjectReference Include="..\ThinkEdu-Core-Service.Domain\ThinkEdu-Core-Service.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Models\" />
+    </ItemGroup>
+
 </Project>

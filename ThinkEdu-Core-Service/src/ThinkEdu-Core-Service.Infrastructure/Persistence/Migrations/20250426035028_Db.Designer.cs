@@ -12,8 +12,8 @@ using ThinkEdu_Core_Service.Infrastructure.Persistence;
 namespace ThinkEdu_Core_Service.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(CoreDbContext))]
-    [Migration("20250424031152_DbInit")]
-    partial class DbInit
+    [Migration("20250426035028_Db")]
+    partial class Db
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,7 +34,7 @@ namespace ThinkEdu_Core_Service.Infrastructure.Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTimeOffset?>("CreatedAt")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at");
 
@@ -84,7 +84,7 @@ namespace ThinkEdu_Core_Service.Infrastructure.Persistence.Migrations
                         .HasColumnType("bigint")
                         .HasColumnName("trung_tam_id");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTimeOffset?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("updated_at");
 
@@ -142,7 +142,7 @@ namespace ThinkEdu_Core_Service.Infrastructure.Persistence.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTimeOffset?>("CreatedAt")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at");
 
@@ -150,9 +150,6 @@ namespace ThinkEdu_Core_Service.Infrastructure.Persistence.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("varchar(255)")
                         .HasColumnName("created_by");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Email")
                         .HasMaxLength(255)
@@ -181,7 +178,7 @@ namespace ThinkEdu_Core_Service.Infrastructure.Persistence.Migrations
                         .HasColumnType("varchar(255)")
                         .HasColumnName("ten_to_chuc");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTimeOffset?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("updated_at");
 
@@ -203,7 +200,7 @@ namespace ThinkEdu_Core_Service.Infrastructure.Persistence.Migrations
                         .HasColumnType("int")
                         .HasColumnName("co_so_max");
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTimeOffset?>("CreatedAt")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at");
 
@@ -251,7 +248,7 @@ namespace ThinkEdu_Core_Service.Infrastructure.Persistence.Migrations
                         .HasColumnType("bigint")
                         .HasColumnName("tenant_id");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTimeOffset?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("updated_at");
 

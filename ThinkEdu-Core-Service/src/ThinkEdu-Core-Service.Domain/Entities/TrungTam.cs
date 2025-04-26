@@ -24,6 +24,8 @@ namespace ThinkEdu_Core_Service.Domain.Entities
 
         public int? CoSoMax { get; set; }
 
+        public string? UpdatedBy { get; set; }
+
         public ICollection<CoSo> CoSo { get; set; } = new List<CoSo>();
     }
 }

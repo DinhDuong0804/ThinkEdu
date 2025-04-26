@@ -36,10 +36,12 @@ public static class ConfigureServices
             options.AddPolicy("AllowAll",
                 builder =>
                 {
-                    builder.AllowAnyOrigin()
+                    builder
+                        .AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader()
-                        .WithExposedHeaders();
+                        .WithExposedHeaders()
+                        ;
                 });
         });
 

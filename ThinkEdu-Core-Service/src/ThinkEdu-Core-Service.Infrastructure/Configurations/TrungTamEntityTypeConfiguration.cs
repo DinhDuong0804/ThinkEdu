@@ -20,13 +20,11 @@ namespace ThinkEdu_Core_Service.Infrastructure.Configurations
             builder.Property(t => t.MoTa).HasColumnName("mo_ta").IsRequired(false).HasColumnType("varchar");
             builder.Property(t => t.CoSoMax).HasColumnName("co_so_max").IsRequired(false).HasColumnType("int");
             builder.Property(x => x.Status).HasColumnName("status").IsRequired().HasColumnType("varchar(50)").HasMaxLength(50);
-            builder.Property(x => x.CreatedAt).HasColumnName("created_at").IsRequired();
+            builder.Property(x => x.CreatedAt).HasColumnName("created_at").IsRequired(false);
             builder.Property(x => x.UpdatedAt).HasColumnName("updated_at").IsRequired(false);
             builder.Property(x => x.CreatedBy).HasColumnName("created_by").IsRequired(false).HasColumnType("varchar(255)").HasMaxLength(255);
             builder.Property(x => x.UpdatedBy).HasColumnName("updated_by").IsRequired(false).HasColumnType("varchar(255)").HasMaxLength(255);
             builder.HasOne(x => x.ToChuc).WithMany(x => x.TrungTam).HasForeignKey(x => x.TenantId).OnDelete(DeleteBehavior.Cascade);
-            builder.Ignore(x => x.DeletedBy);
-            builder.Ignore(x => x.DeletedAt);
         }
     }
 }

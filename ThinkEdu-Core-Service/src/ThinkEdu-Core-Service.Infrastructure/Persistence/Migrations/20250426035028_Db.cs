@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ThinkEdu_Core_Service.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class DbInit : Migration
+    public partial class Db : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -23,9 +23,8 @@ namespace ThinkEdu_Core_Service.Infrastructure.Persistence.Migrations
                     email = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
                     so_dien_thoai = table.Column<string>(type: "varchar(15)", maxLength: 15, nullable: true),
                     status = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    created_at = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
+                    updated_at = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
                     created_by = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
@@ -69,11 +68,11 @@ namespace ThinkEdu_Core_Service.Infrastructure.Persistence.Migrations
                     hinh_anh = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
                     mo_ta = table.Column<string>(type: "varchar", nullable: true),
                     co_so_max = table.Column<int>(type: "int", nullable: true),
+                    updated_by = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
                     status = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    created_by = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
-                    updated_by = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true)
+                    created_at = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
+                    updated_at = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
+                    created_by = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -99,11 +98,11 @@ namespace ThinkEdu_Core_Service.Infrastructure.Persistence.Migrations
                     email = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
                     trung_tam_id = table.Column<long>(type: "bigint", nullable: false),
                     tenant_id = table.Column<long>(type: "bigint", nullable: false),
+                    updated_by = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
                     status = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    created_by = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
-                    updated_by = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true)
+                    created_at = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
+                    updated_at = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
+                    created_by = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true)
                 },
                 constraints: table =>
                 {

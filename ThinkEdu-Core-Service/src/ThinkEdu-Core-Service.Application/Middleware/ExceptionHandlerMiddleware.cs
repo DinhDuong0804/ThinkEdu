@@ -4,7 +4,6 @@ using Newtonsoft.Json.Serialization;
 using System.Net;
 using ThinkEdu_Core_Service.Application.Exceptions;
 using ThinkEdu_Core_Service.Domain.Common;
-using ThinkEdu_Core_Service.Domain.Enums;
 
 namespace ThinkEdu_Core_Service.Application.Middleware
 {
@@ -42,28 +41,28 @@ namespace ThinkEdu_Core_Service.Application.Middleware
             {
                 case ValidationException validationException:
                     httpStatusCode = (int)HttpStatusCode.BadRequest;
-                    response.ResultCode = EResultCode.BADREQUEST;
+                    response.ResultCode = HttpStatusCode.BadRequest;
                     response.Message = exception.Message;
                     response.ValidationErrors = validationException.ValidationErrors;
                     break;
                 case BadRequestException badRequestException:
                     httpStatusCode = (int)HttpStatusCode.BadRequest;
-                    response.ResultCode = EResultCode.BADREQUEST;
+                    response.ResultCode = HttpStatusCode.BadRequest;
                     response.Message = badRequestException.Message;
                     break;
                 case NotFoundException _:
                     httpStatusCode = (int)HttpStatusCode.NotFound;
-                    response.ResultCode = EResultCode.NOTFOUND;
+                    response.ResultCode = HttpStatusCode.NotFound;
                     response.Message = exception.Message;
                     break;
                 case ApiException apiException:
                     httpStatusCode = (int)HttpStatusCode.InternalServerError;
-                    response.ResultCode = EResultCode.INTERNALSERVERERROR;
+                    response.ResultCode = HttpStatusCode.InternalServerError;
                     response.Message = apiException.Message;
                     break;
                 default:
                     httpStatusCode = (int)HttpStatusCode.InternalServerError;
-                    response.ResultCode = EResultCode.INTERNALSERVERERROR;
+                    response.ResultCode = HttpStatusCode.InternalServerError;
                     response.Message = exception.Message;
                     break;
             }
